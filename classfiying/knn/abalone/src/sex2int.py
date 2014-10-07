@@ -1,3 +1,8 @@
+"""
+because the first colume of ../data/abalone.data is not numeric value, so
+write this code to map the sex feature to numeric value
+"""
+
 import re
 import sys
 
@@ -6,9 +11,9 @@ ofile = open(sys.argv[2], 'w')
 
 for line in ifile.readlines():
 
-    line = re.sub('M', '1', line)       #map male to 1
-    line = re.sub('F', '0', line)       #map female to 0
-    line = re.sub('I', '2', line)       #map infant to 2
+    line = re.sub('M', '1', line)       # map male to 1
+    line = re.sub('F', '0', line)       # map female to 0
+    line = re.sub('I', '2', line)       # map infant to 2
 
     ofile.write(line)
 

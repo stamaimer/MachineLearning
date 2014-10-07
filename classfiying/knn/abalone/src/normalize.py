@@ -14,4 +14,4 @@ def normalize(matrix):
     normalized_matrix = matrix - tile(mins, (number_of_rows, 1))
     normalized_matrix = normalized_matrix / tile(ranges, (number_of_rows, 1))
 
-    return normalized_matrix
+    return normalized_matrix, ranges, mins
