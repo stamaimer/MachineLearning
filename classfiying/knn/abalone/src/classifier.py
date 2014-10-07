@@ -1,4 +1,14 @@
 from numpy import *
+import operator
+
+def none2int(var):
+
+    if var == None:
+
+        return 0
+    else:
+
+        return var
 
 def classify(instance, matrix, labels, k):
 
@@ -20,7 +30,7 @@ def classify(instance, matrix, labels, k):
 
         tmp = labels[sorted_distances[i]]
 
-        class_count[tmp] = class_count.get(tmp) + 1
+        class_count[tmp] = none2int(class_count.get(tmp)) + 1
 
     sorted_class_count = sorted(class_count.iteritems(),
                                 key = operator.itemgetter(1),
